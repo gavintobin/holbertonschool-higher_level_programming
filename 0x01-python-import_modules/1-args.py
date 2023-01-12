@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import sys
+
+import math
+
 if __name__ == '__main__':
     numarg = len(sys.argv) - 1
     if numarg == 1:
