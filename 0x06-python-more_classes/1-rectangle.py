@@ -33,7 +33,7 @@ class Rectangle:
         self.__height = value
 
 
-    def perimiter(self):
+    def perimeter(self):
         return (self.__width + self.__height) * 2
     
 
