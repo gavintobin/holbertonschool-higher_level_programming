@@ -34,7 +34,7 @@ class Rectangle:
 
 
     def perimiter(self):
-        return (self.__width + welf.__height) * 2
+        return (self.__width + self.__height) * 2
     
 
     def area(self):
