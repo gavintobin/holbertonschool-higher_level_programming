@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ dat base g boiiii"""
-BaseGeometry = __import__('8-rectangle').Basegeometry
+BaseGeometry = __import__('8-rectangle').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
