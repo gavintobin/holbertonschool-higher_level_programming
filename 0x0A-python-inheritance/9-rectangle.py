@@ -1,6 +1,17 @@
 #!/usr/bin/python3
-""" dat base g boiiii"""
-BaseGeometry = __import__('8-rectangle').BaseGeometry
+"""rectang"""
+
+
+class BaseGeometry:
+    """class"""
+    def area(self):
+        raise Exception('area() is not implemented')
+
+    def integer_validator(self, name, value):
+        if type(value) != int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value <= 0:
+            raise ValueError('{} must be greater than 0'.format(name))
 
 
 class Rectangle(BaseGeometry):
