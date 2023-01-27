@@ -16,5 +16,5 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         rstr = "[Rectangle]"
-        rstr += str(self.__width) + "/" str(self.__height)
+        rstr += str(self.__width) + "/" + str(self.__height)
         return rstr
