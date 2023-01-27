@@ -4,6 +4,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
+    """dat r tang boiiii"""
     def __init__(self, width, height):
         self.__width = width
         self.__height = height

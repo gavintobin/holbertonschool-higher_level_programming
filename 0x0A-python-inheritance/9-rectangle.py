@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" dat base g boiiii"""
 BaseGeometry = __import__('8-rectangle').Basegeometry
 
 
 class Rectangle(BaseGeometry):
+    """r tang m'baby """
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
