@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-class MyList:
+"""mylist"""
 
+
+class MyList(list):
+    """mylist"""
     def print_sorted(self):
         print(sorted(self))
