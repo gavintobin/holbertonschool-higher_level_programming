@@ -32,3 +32,16 @@ class Rectangle(BaseGeometry):
         rstr = "[Rectangle]"
         rstr += str(self.__width) + "/" + str(self.__height)
         return rstr
+
+
+class Square(Rectangle):
+    """r tangs friend"""
+    def __init__(self, size):
+        self.__size = size
+        size.integer_validator = ("size", size)
+
+    def area(self):
+        return self.__size ** 2
+
+    def __str__(self):
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
