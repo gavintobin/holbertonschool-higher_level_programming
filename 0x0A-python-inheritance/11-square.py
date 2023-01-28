@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ractang"""
 Rectangle = __import__('9-rectangle').Rectangle
 
