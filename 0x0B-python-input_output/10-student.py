@@ -18,3 +18,4 @@ class Student:
         for i in attrs:
             if i in mydict:
                 student[i] = mydict[i]
+                return student
