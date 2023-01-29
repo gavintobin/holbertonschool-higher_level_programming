@@ -20,5 +20,5 @@ class Student:
                 student[i] = mydict[i]
         return student
 
-        def reload_from_json(self, json):
-            self.__dict__.update(json)
+    def reload_from_json(self, json):
+        self.__dict__.update(json)
