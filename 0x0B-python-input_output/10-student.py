@@ -14,5 +14,5 @@ class Student:
             if all(type(attrs) == str for attr in attrs):
                 return {att: getattr(self, att)
                         for att in attrs if hasattr(self, att)}
-            else:
-                return self.__dict__
+        else:
+            return self.__dict__
