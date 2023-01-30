@@ -78,3 +78,9 @@ class Rectangle(Base):
             r += (' ' * self.x + '#' * self.width + '\n')
             r = r[:-1]
             print(r)
+
+        def __str__(self):
+            """returns string output of rec"""
+            return '[' + type(self.__name__) + ']' + '(' + str(self.__id) \
+                + ')' + str(self.__x) + '/' + str(self.__y) + '-' \
+                + str(self.__width) + '/' + str(self.__height)
