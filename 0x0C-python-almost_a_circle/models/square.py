@@ -26,3 +26,19 @@ class Square(Rectangle):
         strekt += "{}/{} - ".format(self.x, self.y)
         strekt += "{}".format(self.width)
         return strekt
+
+    def update(self, *args, **kwargs):
+        """update sqr args"""
+        if args:
+            attrs = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+
+    def to_dictionary(self):
+        """mydict of square"""
+        mydict = {"id": self.id,
+                  "size": self.width, "x": self.x, "y": self.y}
+        return mydict
