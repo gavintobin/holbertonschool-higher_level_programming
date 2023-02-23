@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """lists all states"""
 import MySQLdb
-import sys
+from  sys import argv
 
 
 def list_all():
