@@ -6,7 +6,8 @@ import sys
 
 def list_all():
     """list all function"""
-    conn = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="root", db="hbtn_0e_0_usa", charset="utf8")
+    conn = MySQLdb.connect(host="localhost", port=3306, user="root",
+                           passwd="root", db="hbtn_0e_0_usa", charset="utf8")
     cur = conn.cursor()
     cur.execute("Select * FROM states  ORDER BY id ASC")
     query_rows = cur.fetchall()
@@ -14,6 +15,7 @@ def list_all():
         print(row)
     cur.close()
     conn.close()
+
 
 if __name__ == '__main__':
     list_all()
