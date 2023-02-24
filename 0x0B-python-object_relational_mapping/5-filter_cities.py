@@ -11,7 +11,7 @@ def list_all():
     cur = conn.cursor()
     cur.execute("Select name FROM cities  WHERE state_id = ANY ( SELECT id \
                  FROM states \
-                 WHERE name = %(state)s) \
+                 WHERE BINARY name = %(state)s) \
                  ORDER BY id ASC", {'state': sys.argv[4]})
     query_rows = cur.fetchall()
     for row in query_rows:
