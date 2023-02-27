@@ -2,7 +2,7 @@
 """task 9"""
 import sys
 from sqlalchemy.orm import session, sessionmaker
-from base_model import Base, State
+from model_state import Base, State
 from sqlalchemy import engine, create_engine
 
 
@@ -14,6 +14,6 @@ if __name__ == '__main__':
 
     session = sessionmaker(bind=engine)
     session = session()
-    for state in session.query(State).order_by(State.id).all():
-        if "a" in state:
+    for state in session.query(State).order_by(State.id):
+        if "a" in state.name:
             print("{}: {}".format(state.id, state.name))
