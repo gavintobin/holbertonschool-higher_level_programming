@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""task 8"""
+"""task 11"""
 import sys
 from sqlalchemy.orm import session, sessionmaker
 from model_state import Base, State
@@ -14,8 +14,7 @@ if __name__ == '__main__':
 
     session = sessionmaker(bind=engine)
     session = session()
-    for state in session.query(State):
-        if sys.argv[4] == state.name:
-            print("{}".format(state.id))
-    if not state.name:
-        print("Not Found")
+    state = session.query(State).order_by(State.id).all()
+    lou = State(id=6, name="Louisiana")
+    session.add(lou)
+    session.commit()
