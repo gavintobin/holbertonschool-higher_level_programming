@@ -15,6 +15,7 @@ if __name__ == '__main__':
     session = sessionmaker(bind=engine)
     session = session()
     state = session.query(State).order_by(State.id).all()
-    lou = State(id=6, name="Louisiana")
+    lou = State(name="Louisiana")
     session.add(lou)
     session.commit()
+    print(lou.id)
