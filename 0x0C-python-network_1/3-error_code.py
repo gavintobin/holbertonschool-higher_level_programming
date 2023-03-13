@@ -1,20 +1,14 @@
 #!/usr/bin/python3
-"""
-error code Write a Python script that takes
-in a URL, sends a request to the URL and displays
-the value of the X-Request-Id variable found in the
-header of the response.
-"""
-from urllib import request, error
+"""HBTN Status"""
+from urllib import request, parse, error
+from urllib.error import HTTPError
 import sys
 
-if __name__ == '__main__':
-
-    url = sys.argv[1]
-    http = request.Request(url)
-
+if __name__ == "__main__":
+    req = request.Request(sys.argv[1])
     try:
-        with request.urlopen(http) as response:
-            print(response.read().decode('utf-8'))
-    except error.HTTPError as e:
-        print(f"Error code: {e.code}")
+        with request.urlopen(req) as response:
+            html = response.read()
+            print(html.decode('utf-8'))
+    except HTTPError as err:
+        print("Error code: {}".format(err.code))
