@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""u hoh error code"""
 from urllib import request, error
 import sys
 

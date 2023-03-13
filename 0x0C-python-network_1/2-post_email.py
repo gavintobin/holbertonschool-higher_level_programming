@@ -1,9 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/
+"""proj task 2"""
 import sys
 from urllib import request, parse
 
 
 def send_post_request(url, email):
+    """post request function"""
     data = parse.urlencode({'email': email}).encode('utf-8')
     with request.urlopen(url, data) as response:
         return response.read().decode('utf-8')
