@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+"""urlib req"""
+import urllib.request
+
+with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+   html = response.read()
+
+   print('Body Response:')
+   print('\t- type:', type(html))
+   print('\t- content:', html)
+   print('\t- utf8 content:', html.decode('utf-8'))
