@@ -8,5 +8,5 @@ if __name__ == '__main__':
 
 with urllib.request.urlopen(url) as resp:
     head = resp.info()
-    x_request_id =head['X-request-Id']
+    x_request_id = head['X-request-Id']
     print(x_request_id)
