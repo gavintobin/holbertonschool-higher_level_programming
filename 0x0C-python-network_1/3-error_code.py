@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""u hoh error code Write a Python script that takes
+"""
+u hoh error code Write a Python script that takes
 in a URL, sends a request to the URL and displays
 the value of the X-Request-Id variable found in the
-header of the response."""
+header of the response.
+"""
 from urllib import request, error
 import sys
 
