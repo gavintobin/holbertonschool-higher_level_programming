@@ -1,8 +1,8 @@
 #!/usr/bin/node
 module.exports = class Rectangle {
   constructor (w, h) {
-    if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
-      return {}; // create an empty object if w or h is not a positive integer
+    if (w <= 0 || h <= 0 || typeof w !== 'number' || typeof h !== 'number') {
+      return;
     }
     this.width = w;
     this.height = h;
