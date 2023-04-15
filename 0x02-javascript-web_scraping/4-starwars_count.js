@@ -1,27 +1,31 @@
 #!/usr/bin/node
 const request = require('request');
 
-const id = '18'
-const url = 'https://swapi-api.hbtn.io/api/films/' + id
-
-request(url, (error, response, body) => {
-    if (error) {
-      console.error(error);
-      return;
-    }
+if (process.argv.length < 3) {
+    console.error('put URL into these paws');
+  } else {
+    const apiUrl = process.argv[2];
+    const characterId = 18;
   
-    const data = JSON.parse(body);
-    const films = data.results;
-  
-    const numMoviesWithWedgeAntilles = films.reduce((count, film) => {
-      if (film.characters.includes(`https://swapi-api.hbtn.io/api/people/${id}/`)) {
-        return count + 1;
-      } else {
-        return count;
+    request.get(apiUrl, (error, response, body) => {
+      if (error) {
+        console.error(` :( An error occurred while making the GET request: ${error}`);
+        return;
       }
-    }, 0);
   
-    console.log(`Number of movies with Wedge Antilles: ${numMoviesWithWedgeAntilles}`);
-  });
-
-
+      if (response.statusCode === 200) {
+        const films = JSON.parse(body).results;
+        let count = 0;
+  
+        films.forEach((film) => {
+          if (film.characters.some((characterUrl) => characterUrl.includes(`/people/${characterId}/`))) {
+            count += 1;
+          }
+        });
+  
+        console.log(count);
+      } else {
+        console.error(` :( An error occurred while fetching the films: ${response.statusCode}`);
+      }
+    });
+  }
